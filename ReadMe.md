@@ -6,10 +6,10 @@
  
  
 ## Steps to reproduce
-```
+```bash
 git clone https://github.com/TechMaster/bugsequelize.git
 cd bugsequelize
-edit ./config/config.json to properly connect to your Postgresql database
+#edit ./config/config.json to properly connect to your Postgresql database
 npm install
 npm start
 ```
@@ -27,7 +27,7 @@ In ./config/config.json, I defined non public schema in schema property.
     "database": "payroll",
     "host"    : "payroll",
     "dialect" : "postgres",
-    "schema"  : "cms"   //Non public schema
+    "schema"  : "cms"   /*Non public schema*/
   }
 }
 ```
