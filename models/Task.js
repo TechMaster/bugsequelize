@@ -12,7 +12,6 @@ module.exports = function (sequelize, DataTypes) {
       timestamps: false,
       paranoid: true,
       underscored: true,
-      freezeTableName: true,
       tableName: 'task',
 
       classMethods: {

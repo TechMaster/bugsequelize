@@ -5,6 +5,6 @@
     "database": "payroll",
     "host"    : "payroll",
     "dialect" : "postgres",
-    "schema"  : "blog"
+    "schema"  : "cms"
   }
 }
