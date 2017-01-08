@@ -1,0 +1,19 @@
+{
+  "name": "sequelizebug",
+  "version": "1.0.0",
+  "description": "Bug when create table in Postgresql non public schema",
+  "scripts": {
+    "start": "node syncdb.js",
+    "test": ""
+  },
+  "keywords": [
+    "sequelize"
+  ],
+  "author": "Trịnh Minh Cường",
+  "license": "MIT",
+  "dependencies": {    
+    "pg": "^6.1.2",
+    "pg-hstore": "^2.3.2",    
+    "sequelize": "^3.28.0"    
+  }
+}
