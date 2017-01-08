@@ -3,6 +3,8 @@
 
 I upload code at here https://github.com/TechMaster/bugsequelize.git
 
+The cause problem is
+
 ## Description
  Synchronize from sequelize models to Postgresql non public schema causes error 'relation xxx does not exist'.
  Sequelize ignores schema property of model when creating references between models.

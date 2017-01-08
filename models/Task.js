@@ -1,5 +1,3 @@
-const config = require('../config/config');
-
 module.exports = function (sequelize, DataTypes) {
 
   const Task = sequelize.define('Task', {
@@ -10,7 +8,7 @@ module.exports = function (sequelize, DataTypes) {
       },
       title: DataTypes.TEXT
     }, {
-      schema: config.schema,
+      schema: sequelize.custom_schema,
       timestamps: false,
       paranoid: true,
       underscored: true,
