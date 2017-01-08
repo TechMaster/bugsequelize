@@ -1,6 +1,8 @@
-module.exports = function (db, DataTypes) {
+const config = require('../config/config');
 
-  const Task = db.define('Task', {
+module.exports = function (sequelize, DataTypes) {
+
+  const Task = sequelize.define('Task', {
       id: {
         type: DataTypes.BIGINT,
         primaryKey: true,
@@ -8,7 +10,7 @@ module.exports = function (db, DataTypes) {
       },
       title: DataTypes.TEXT
     }, {
-      schema: db.schema,
+      schema: config.schema,
       timestamps: false,
       paranoid: true,
       underscored: true,
@@ -18,7 +20,6 @@ module.exports = function (db, DataTypes) {
       classMethods: {
         associate: function (models) {
           Task.belongsTo(models.Project, {
-              schema: db.schema,
               foreignKey: {     //Mặc định foreign key là Nullable
                 name: 'project_id',  //Nếu muốn bắt buộc foreign_key not null thì phải đổi tên foreign key mặc định
                 allowNull: false

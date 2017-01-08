@@ -1,5 +1,7 @@
-module.exports = function (db, DataTypes) {
-  const Project = db.define('Project', {
+const config = require('../config/config');
+
+module.exports = function (sequelize, DataTypes) {
+  const Project = sequelize.define('Project', {
       id: {
         type: DataTypes.BIGINT,
         primaryKey: true,
@@ -8,7 +10,7 @@ module.exports = function (db, DataTypes) {
       title: DataTypes.TEXT
 
     }, {
-      schema: db.schema,
+      schema: config.schema,
       timestamps: false,
       paranoid: true,
       underscored: true,
