@@ -14,7 +14,7 @@ npm install
 npm start
 ```
 
-npm start will run syncdb.js file. The syncdb.js has commmand sequelize.sync()
+```npm start``` will run syncdb.js file. The syncdb.js has commmand sequelize.sync()
 
 In models folder, there are two models: Project and Task. Project hasMany Task. Task belongsTo Project.
 
@@ -27,7 +27,7 @@ In ./config/config.json, I defined non public schema in schema property.
     "database": "payroll",
     "host"    : "payroll",
     "dialect" : "postgres",
-    "schema"  : "cms"   /*Non public schema*/
+    "schema"  : "cms"   // Non public schema
   }
 }
 ```
@@ -39,4 +39,11 @@ Here is generated SQL command
 CREATE TABLE IF NOT EXISTS "cms"."task" ("id"  BIGSERIAL , "title" TEXT, "project_id" BIGINT REFERENCES "project" ("id") ON DELETE SET NULL ON UPDATE CASCADE, PRIMARY KEY ("id"));
 ```
 
-To make this command runs correctly, REFERENCES "project" ("id") should be REFERENCES "targeted_schema"."project" ("id")
+Wrong references. This only works when scheme is 'public' 
+```sql
+REFERENCES "project" ("id")
+```
+it should be 
+```sql
+REFERENCES "cms"."project" ("id")
+```
